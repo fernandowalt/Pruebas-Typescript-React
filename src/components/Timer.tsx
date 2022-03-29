@@ -9,8 +9,6 @@ export const Timer = ({ milisegundos }: TimerArgs) => {
 
   const ref = useRef<NodeJS.Timer>();
 
-  console.log(milisegundos);
-
   useEffect(() => {
     ref.current && clearInterval(ref.current);
     ref.current = setInterval(() => setSegundos((s) => s + 1), milisegundos);
